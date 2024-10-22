@@ -178,11 +178,14 @@ if(config.enable){
 
 		FreezeEntityPosition(object, true);
 
+		DisplayRadar(false);
+
 		await Delay(50);
 
 		await takeScreenshotForObject(object, modelName,type);
 
 
+		DisplayRadar(true);
 		DeleteEntity(object);
 		SetPlayerControl(playerId, true);
 		SetModelAsNoLongerNeeded(modelHash);
