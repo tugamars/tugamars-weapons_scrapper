@@ -284,6 +284,17 @@ async function parseMetaFiles(){
                 const locDesc = xpath.find(item, "/LocDesc")[0] || '';
 
 
+                const meta = {
+                    clipSize: xpath.find(item, "/ClipSize") && xpath.find(item, "/ClipSize").hasOwnProperty(0) && xpath.find(item, "/ClipSize")[0].hasOwnProperty("$") ? parseInt(xpath.find(item, "/ClipSize")[0]["$"].value) : null,
+                    hud:{
+                        damage: xpath.find(item, "/HudDamage") && xpath.find(item, "/HudDamage").hasOwnProperty(0) && xpath.find(item, "/HudDamage")[0].hasOwnProperty("$")  ? parseInt(xpath.find(item, "/HudDamage")[0]["$"].value) : 0,
+                        speed: xpath.find(item, "/HudSpeed") && xpath.find(item, "/HudSpeed").hasOwnProperty(0) && xpath.find(item, "/HudSpeed")[0].hasOwnProperty("$")   ? parseInt(xpath.find(item, "/HudSpeed")[0]["$"].value) : 0,
+                        capacity: xpath.find(item, "/HudCapacity") && xpath.find(item, "/HudCapacity").hasOwnProperty(0) && xpath.find(item, "/HudCapacity")[0].hasOwnProperty("$")   ? parseInt(xpath.find(item, "/HudCapacity")[0]["$"].value) : 0,
+                        accuracy: xpath.find(item, "/HudAccuracy") && xpath.find(item, "/HudAccuracy").hasOwnProperty(0) && xpath.find(item, "/HudAccuracy")[0].hasOwnProperty("$")   ? parseInt(xpath.find(item, "/HudAccuracy")[0]["$"].value) : 0,
+                        range: xpath.find(item, "/HudRange") && xpath.find(item, "/HudRange").hasOwnProperty(0) && xpath.find(item, "/HudRange")[0].hasOwnProperty("$")   ? parseInt(xpath.find(item, "/HudRange")[0]["$"].value) : 0,
+                    }
+                }
+
                 if (!attachBone) {
                     components[name] = {};
                 } else {
@@ -295,7 +306,8 @@ async function parseMetaFiles(){
                           title: locName,
                           desc: locDesc,
                         },
-                        type: item.$.type.toLowerCase()
+                        type: item.$.type.toLowerCase(),
+                        meta: meta
                     };
                 }
             });
@@ -304,7 +316,6 @@ async function parseMetaFiles(){
         }
 
     }
-
 
     for (const file of metaFiles["WEAPONINFO_FILE"]) {
         try {
@@ -347,6 +358,21 @@ async function parseMetaFiles(){
                     const damagetype=item.damagetype.toLowerCase();
                     const ammo=item.ammoinfo.ref.toLowerCase().replaceAll("ammo_","");
 
+                    const meta={
+                        clipSize: item.clipsize && item.clipsize.value ? parseInt(item.clipsize.value) : null,
+                        damage: item.damage && item.damage.value ? parseFloat(item.damage.value) : null,
+                        penetration: item.penetration && item.penetration.value ? parseFloat(item.penetration.value) : null,
+                        hud:{
+                            damage:item.huddamage && item.huddamage.value ? parseInt(item.huddamage.value) : 0,
+                            speed:item.hudspeed && item.hudspeed.value ? parseInt(item.hudspeed.value) : 0,
+                            capacity:item.hudcapacity && item.hudcapacity.value ? parseInt(item.hudcapacity.value) : 0,
+                            accuracy:item.hudaccuracy && item.hudaccuracy.value ? parseInt(item.hudaccuracy.value) : 0,
+                            range:item.hudrange && item.hudrange.value ? parseInt(item.hudrange.value) : 0,
+                        },
+                        flags: item.weaponflags ? item.weaponflags.split(" ") : {}
+                    };
+
+
                     let attachments={};
                     const attachpoints=xpath.find(item,"//attachpoints/item");
 
@@ -362,7 +388,7 @@ async function parseMetaFiles(){
                                 console.log(">>>>>>>>>>> Component not found: " + compname);
                             } else {
                                 console.log(">>>> Component found " + compname);
-                                if(!components[compname].hasOwnProperty("objectName")){
+                                if(!components[compname].hasOwnProperty("bone")){
                                     attachments[compname]={};
                                 } else {
                                     attachments[compname]=components[compname];
@@ -375,11 +401,13 @@ async function parseMetaFiles(){
                     });
 
                     weapons[name]={
+                        spawnName:name,
                         model:model,
                         group:group,
                         damageType: damagetype,
                         ammo:ammo,
-                        attachments:attachments
+                        meta: meta,
+                        attachments:attachments,
                     };
                 }
             });
