@@ -295,7 +295,7 @@ async function parseMetaFiles(){
                     }
                 }
 
-                if (!attachBone) {
+                if (!attachBone && !model) {
                     components[name] = {};
                 } else {
                     components[name] = {
@@ -357,6 +357,7 @@ async function parseMetaFiles(){
                     const group=item.group;
                     const damagetype=item.damagetype.toLowerCase();
                     const ammo=item.ammoinfo.ref.toLowerCase().replaceAll("ammo_","");
+                    const nameLabel=item.humannamehash;
 
                     const meta={
                         clipSize: item.clipsize && item.clipsize.value ? parseInt(item.clipsize.value) : null,
@@ -402,6 +403,7 @@ async function parseMetaFiles(){
 
                     weapons[name]={
                         spawnName:name,
+                        nameLabel:nameLabel,
                         model:model,
                         group:group,
                         damageType: damagetype,
