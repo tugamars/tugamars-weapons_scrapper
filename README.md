@@ -24,5 +24,6 @@ For the screenshoter to work as intended you should also have Bentix's fivem-gre
 5) Join the server through FiveM client
 6) Do ``/screenshotweapons`` and let the process run. Don't touch your game.
 7) Do ``/screenshotcomponents`` and let the process run. Don't touch your game.
+
 If you notice that certain weapons/components are missing from the images folder, you can ``refresh`` and restart the script, and execute the commands again, it will go through the weapons that don't already have screenshots.
 
