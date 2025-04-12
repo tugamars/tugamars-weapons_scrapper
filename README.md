@@ -2,6 +2,9 @@
 
 This script serves as **development/support tool** for obtaining all weapons in a server with respective components, tints and meta/information related to said.
 
+# Examples
+My "Weapons Shop and Loadout" script uses this scrapper as a basis to generate it's config and UI.
+
 ## Scrapper
 The script runs through all scripts with weapon files mentioned in the fxmanifest.lua and parses their meta files to get the  weapons in question. 
 The command (server) to trigger the fetching of weapons is: ``tgmweapons:obtain``
