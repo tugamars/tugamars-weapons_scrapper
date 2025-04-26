@@ -1,0 +1,46 @@
+Types:
+[
+  null,
+  "cweaponcomponentinfo",
+  "cweaponcomponentflashlightinfo",
+  "cweaponcomponentscopeinfo",
+  "cweaponcomponentsuppressorinfo",
+  "cweaponcomponentclipinfo"
+]
+
+Bones:
+
+[
+  null,
+  "WAPFlshLasr",
+  "WAPGrip",
+  "AAPFlsh",
+  "WAPScop",
+  "WAPScop_2",
+  "WAPSupp",
+  "WAPClip",
+  "AAPClip",
+  "gun_root",
+  "WAPBarrel",
+  "WAPSupp_2",
+  "WAPFlshLasr_2",
+  "WAPGrip_2",
+  "WAPFlsh",
+  "WAPClip_2",
+  "WAPFlsh_2",
+  "WAPScop_3"
+]
+
+Weapon Bones:
+
+[
+  null,
+  "",
+  "WAPGrip",
+  "WAPFlshLasr",
+  "WAPScop",
+  "WAPSupp",
+  "WAPClip"
+]
+
+https://docs.fivem.net/natives/?_0x7B5280EBA9840C72
