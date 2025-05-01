@@ -35,3 +35,5 @@ If you notice that certain weapons/components are missing from the images folder
 Place default GTA Weapons .meta files in data/default/(dlc_patch)/
 
 To find the files for a DLC, usually they are located in GTA Files (open with RPF Explorer or OpenIV) at ``update\update.rpf\dlc_patch\[dlc_patch_name]\common\data\ai``.
+
+Add the file paths to ``processResources`` in weaponConfigGenerator.js 
