@@ -180,6 +180,7 @@ async function processResources() {
             path.resolve(resourcePath+ "/data/default/mpchristmas3/weapon_railgunxm3.meta"),
             path.resolve(resourcePath+ "/data/default/mpvalentines/weapongusenberg.meta"),
             path.resolve(resourcePath+ "/data/default/spupgrade/weaponhatchet.meta"),
+            path.resolve(resourcePath+ "/data/default/mp2024_02_g9ec/weapon_strickler.meta"),
         ];
 
         listFiles["WEAPONCOMPONENTSINFO_FILE"]=[
@@ -209,6 +210,7 @@ async function processResources() {
             path.resolve(resourcePath+ "/data/default/mpchristmas3/weaponcomponents.meta"),
             path.resolve(resourcePath+ "/data/default/mpvalentines/weaponcomponents.meta"),
             path.resolve(resourcePath+ "/data/default/mpchristmas2/weaponcomponents.meta"),
+            path.resolve(resourcePath+ "/data/default/mp2024_02_g9ec/weaponcomponents.meta"),
         ];
     }
 
