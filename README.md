@@ -30,3 +30,8 @@ For the screenshoter to work as intended you should also have Bentix's fivem-gre
 
 If you notice that certain weapons/components are missing from the images folder, you can ``refresh`` and restart the script, and execute the commands again, it will go through the weapons that don't already have screenshots.
 
+## Default GTA Weapons
+
+Place default GTA Weapons .meta files in data/default/(dlc_patch)/
+
+To find the files for a DLC, usually they are located in GTA Files (open with RPF Explorer or OpenIV) at ``update\update.rpf\dlc_patch\[dlc_patch_name]\common\data\ai``.
