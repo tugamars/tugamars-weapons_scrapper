@@ -131,3 +131,4 @@ dist
 .yarn.installed
 /data/images
 yarn.lock
+/.idea/
