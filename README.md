@@ -28,6 +28,7 @@ For the screenshoter to work as intended you should also have Bentix's fivem-gre
 6) Do ``/screenshotweapons`` and let the process run. Don't touch your game.
 7) Do ``/screenshotcomponents`` and let the process run. Don't touch your game.
 
+**It is recommended you have the 'asset download' indicator turned off when taking screenshots**
 If you notice that certain weapons/components are missing from the images folder, you can ``refresh`` and restart the script, and execute the commands again, it will go through the weapons that don't already have screenshots.
 
 ## Default GTA Weapons
