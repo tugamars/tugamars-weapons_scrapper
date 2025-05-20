@@ -1,6 +1,6 @@
 # Weapons Scrapper (Fetcher)
 
-This script serves as **development/support tool** for obtaining all weapons in a server with respective components, tints and meta/information related to said.
+This script serves as **development/support tool** for obtaining all weapons in a FiveM server with respective components and meta/information related to said.
 
 # Examples / Use cases
 My [Weapons Shop and Loadout](https://forum.cfx.re/t/realistic-weapons-shop-loadout-weapon-on-back-standalone/5327516) script uses this scrapper as a basis to generate it's config and UI.
