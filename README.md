@@ -2,8 +2,8 @@
 
 This script serves as **development/support tool** for obtaining all weapons in a server with respective components, tints and meta/information related to said.
 
-# Examples
-My "Weapons Shop and Loadout" script uses this scrapper as a basis to generate it's config and UI.
+# Examples / Use cases
+My [Weapons Shop and Loadout](https://forum.cfx.re/t/realistic-weapons-shop-loadout-weapon-on-back-standalone/5327516) script uses this scrapper as a basis to generate it's config and UI.
 
 ## Scrapper
 The script runs through all scripts with weapon files mentioned in the fxmanifest.lua and parses their meta files to get the  weapons in question. 
