@@ -140,6 +140,7 @@ if(config.enable){
 			RequestWeaponAsset(modelHash)
 			if(!type) type="weapons";
 			while(!HasWeaponAssetLoaded(modelHash)){
+				console.log("Stuck at model loading1");
 				await Delay(100);
 			}
 		}
@@ -151,9 +152,12 @@ if(config.enable){
 		await Delay(100);
 
 		if (IsModelValid(modelHash) && !isWeapon) {
+			let iterations=0;
 			if (!HasModelLoaded(modelHash)) {
 				RequestModel(modelHash);
 				while (!HasModelLoaded(modelHash)) {
+					iterations++;
+					if(iterations === 6){ console.log('ERROR: Unable to load object model'); return; }
 					await Delay(100);
 				}
 			}
@@ -240,6 +244,8 @@ if(config.enable){
 
 		for(const k in weaponComponents){
 			const comp=weaponComponents[k];
+			console.log("Component: " + k + " - ");
+
 			if(!comp || !comp.hasOwnProperty('objectName')) continue;
 			if(componentImages.includes(comp.objectName) || componentImages.includes(comp.objectName.toLowerCase()) || comp.objectName==="") continue;
 			await spawnObjectAndScreenshot(comp.objectName,"components");
